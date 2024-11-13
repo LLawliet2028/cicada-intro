@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #4B2D4A;
+    --secondary-color: #F8C8DC;
+    --accent-color: #7D4F7E;
+    --text-color: #333333;
+    --background-color: #F5F5F5;
+    --font-family: 'Roboto Mono', monospace;
+    --shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.cicada-logo {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 120px;
+    height: auto;
+    background-color: white;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.cicada-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.cicada-header,
+.cicada-footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.cicada-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+.cicada-content {
+    padding: 2rem 1.5rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.cicada-subtitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    color: var(--accent-color);
+}
+
+.cicada-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+.cicada-list {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.cicada-item {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    padding: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cicada-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.cicada-item-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.8rem;
+}
+
+.cicada-item-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.cicada-cta {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.cicada-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cicada-button:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+.scroll-button {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    z-index: 10;
+}
+
+.scroll-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .cicada-title {
+        font-size: 2rem;
+    }
+    .cicada-subtitle {
+        font-size: 1.6rem;
+    }
+    .cicada-text,
+    .cicada-item-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cicada-logo {
+        top: 0.5rem;
+        left: 0.5rem;
+        width: 100px;
+    }
+    .cicada-title {
+        font-size: 1.8rem;
+    }
+    .cicada-subtitle {
+        font-size: 1.4rem;
+    }
+    .cicada-text,
+    .cicada-item-text {
+        font-size: 0.95rem;
+    }
+    .cicada-list {
+        grid-template-columns: 1fr;
+    }
+    .cicada-button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cicada-logo {
+        width: 80px;
+        top: 0.25rem;
+        left: 0.25rem;
+    }
+    .cicada-title {
+        font-size: 1.6rem;
+    }
+    .cicada-subtitle {
+        font-size: 1.2rem;
+    }
+    .cicada-text,
+    .cicada-item-text {
+        font-size: 0.85rem;
+    }
+    .cicada-item {
+        padding: 1.2rem;
+    }
+    .cicada-item-title {
+        font-size: 1.2rem;
+    }
+    .cicada-button {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+    }
+}
