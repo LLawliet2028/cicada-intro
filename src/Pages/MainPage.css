@@ -17,19 +17,6 @@ body {
     color: var(--text-color);
 }
 
-.cicada-logo {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    width: 120px;
-    height: auto;
-    background-color: white;
-    padding: 8px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-}
-
 .cicada-container {
     display: flex;
     flex-direction: column;
@@ -156,7 +143,6 @@ body {
     box-shadow: 0 6px 12px var(--shadow-color);
 }
 
-
 /* Responsive Styles */
 @media (max-width: 1024px) {
     .cicada-title {
@@ -172,10 +158,19 @@ body {
 }
 
 @media (max-width: 768px) {
+    .cicada-container {
+        padding: 0.5rem;
+    }
     .cicada-logo {
+        position: absolute;
         top: 0.5rem;
-        left: 0.5rem;
-        width: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+    }
+    .cicada-header,
+    .cicada-footer {
+        padding: 3rem 1.5rem 1.5rem;
     }
     .cicada-title {
         font-size: 1.8rem;
@@ -197,10 +192,16 @@ body {
 }
 
 @media (max-width: 480px) {
+    .cicada-container {
+        padding: 0.25rem;
+    }
     .cicada-logo {
-        width: 80px;
+        width: 150px;
         top: 0.25rem;
-        left: 0.25rem;
+    }
+    .cicada-header,
+    .cicada-footer {
+        padding: 3.5rem 1rem 1rem;
     }
     .cicada-title {
         font-size: 1.6rem;
