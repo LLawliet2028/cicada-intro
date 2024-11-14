@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MainPage.css';
 import logo from '../Assests/roslogo.png';
 
 function MainPage() {
+  const [showPopup, setShowPopup] = useState(true);
+
   const handleJoinClick = () => {
     window.open('https://forms.gle/MNmdD7zhXSbYDehP7', '_blank');
   };
@@ -14,8 +16,25 @@ function MainPage() {
     });
   };
 
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <div className="cicada-container">
+      {/* Popup Banner */}
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <button className="popup-close" onClick={handleClosePopup}>×</button>
+            <h2 className="popup-title">Important Notice!</h2>
+            <p className="popup-text"><strong>Registrations will close at 15 November 11PM !!!</strong></p>
+            <p className="popup-text">Bring your own laptop</p>
+            <p className="popup-text">Participate to win exciting cash prizes!</p>
+          </div>
+        </div>
+      )}
+
       <header className="cicada-header">
         <img src={logo} alt="Cicada Logo" className="cicada-logo" />  
         <h1 className="cicada-title">Cicada 036: The Ultimate Puzzle Challenge</h1>
@@ -29,7 +48,19 @@ function MainPage() {
           </p>
         </section>
 
-        {/* Scroll Down Button */}
+        <section className="cicada-event-details">
+          <h2 className="cicada-subtitle">Event Details</h2>
+          <p className="cicada-text">
+            <strong>Venue:</strong> LT2
+          </p>
+          <p className="cicada-text">
+            <strong>Date:</strong> 16 November
+          </p>
+          <p className="cicada-text">
+            <strong>Time:</strong> 2PM to 6PM
+          </p>
+        </section>
+
         <button className="scroll-button" onClick={scrollToBottom}>
           Scroll Down to Join
         </button>
@@ -64,7 +95,7 @@ function MainPage() {
             <li className="cicada-item">
               <h3 className="cicada-item-title">Sign up</h3>
               <p className="cicada-item-text">
-                Join the challenge with your team! You can have up to 4 members in your team, and even if you don't have a team, don’t worry – we will assign you to one. We encourage everyone to participate, so come and be a part of this exciting opportunity!
+                Join the challenge with your team! You can have up to 4 members in your team, and even if you don't have a team, don't worry – we will assign you to one. We encourage everyone to participate, so come and be a part of this exciting opportunity!
               </p>
             </li>
             <li className="cicada-item">
