@@ -28,7 +28,7 @@ function MainPage() {
           <div className="popup-content">
             <button className="popup-close" onClick={handleClosePopup}>×</button>
             <h2 className="popup-title">Important Notice!</h2>
-            <p className="popup-text"><strong>Registrations will close at 15 November 11PM !!!</strong></p>
+            <p className="popup-text"><strong>Registrations timeline extended by 16 November 12PM !!!</strong></p>
             <p className="popup-text">Bring your own laptop</p>
             <p className="popup-text">Participate to win exciting cash prizes!</p>
           </div>
